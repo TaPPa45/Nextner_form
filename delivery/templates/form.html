@@ -1,0 +1,37 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма доставки товара</title>
+  </head>
+  <body>
+    <h1>Форма доставки товара</h1>
+    <form action="{% url 'create-form' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <div>           
+            <p>{{ field.label_tag }}<p> 
+            <p>{{ field }}<p>
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+      <button type="submit">Добавить</button>
+    </form>
+    <script type="text/javascript" src="{% static '/js/jquery-3.6.0.min.js'%}"></script>
+    <script type="text/javascript" src="{% static '/js/jquery.formset.js'%}"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("form > p:last").formset();
+      });
+    </script>
+    <style type="text/css">
+        .errorlist{
+            color: red;
+        }
+    </style>
+  </body>
+</html>

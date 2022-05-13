@@ -1,0 +1,24 @@
+version: '3'
+
+
+services:
+           
+    web:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - ./:/Nextner
+        ports:
+            - "8000:8000"
+
+    nginx:
+        build:
+            context: ./docker/nginx
+            dockerfile: Dockerfile
+        volumes_from:
+            - web
+        depends_on: 
+            - web
+        ports:
+            - '80:80'
