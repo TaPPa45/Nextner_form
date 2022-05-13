@@ -15,24 +15,26 @@
 Реализовать возможность множественного добавления адресов пунктов выдачи на формсетах с использованием данной библиотеки https://github.com/elo80ka/django-dynamic-formset
 Не использовать Vue и django rest, то есть все должно быть написано на чистой django
 
-#Запуск приложения
+# Запуск приложения
 
-##Через докер
+## Через докер
 
-склонировать репозиторий 
+склонировать репозиторий `git clone https://github.com/TaPPa45/Nextner_form.git`
 
-в папке с проектом в консоль **docker-compose build** затем **docker-compose up**
+в папке с проектом в консоль `docker-compose build` затем `docker-compose up`
 
 ## Без докера
 
 python 3.10.4
 
-Установить зависимости pip install -r requirements.txt
+склонировать репозиторий `git clone https://github.com/TaPPa45/Nextner_form.git`
 
-Создать **python manage.py makemigrations** и применить **python manage.py migrate**
+Установить зависимости `pip install -r requirements.txt`
 
-Собрать статику **python manage.py collectstatic**
+Создать `python manage.py makemigrations` и применить `python manage.py migrate`
 
-запустить сервер python manage.py runserver
+Собрать статику `python manage.py collectstatic`
+
+запустить сервер `python manage.py runserver`
 
 http://localhost:8000/create-form/
